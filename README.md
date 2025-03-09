@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Ansh Raj - Portfolio
 
-## Getting Started
+Welcome to my portfolio repository! This project showcases my skills, experience, and projects in Web Development, AI/ML, and App Development. Built with **TypeScript** and **Next.js**, my portfolio is designed to provide an interactive and insightful view of my technical journey.
 
-First, run the development server:
+## 📌 About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Hello! I am **Ansh Raj**, a passionate and driven individual currently pursuing my studies as a **sophomore at KIIT**. I am a **full-stack web developer**, constantly exploring and implementing new technologies. Beyond web development, I have a keen interest in **Artificial Intelligence, Python programming, and Object-Oriented Programming in Java**. Additionally, I am a **prompt engineer, writer, and musician**, always looking for creative ways to express myself.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔹 Technical Skills
+- **Programming Languages:** C, C++, Java, Python, JavaScript, TypeScript
+- **Web Development:** Next.js, React, Node.js, Express
+- **Database Management:** MongoDB, PostgreSQL, Firebase
+- **App Development:**  React Native
+- **Other Tools & Technologies:** Git, Linux 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🏆 Featured Projects
+### 🖥️ Fed-Frontend (Completed)
+The **official website of FED (Federation of Entrepreneurship Development)**, designed to promote events, showcase team members, and provide resources for aspiring entrepreneurs.
+#### 🔹 Tech Stack:
+- **Frontend:** ReactJS with Vite
+- **Styling:** SCSS
+- **Authentication:** Google OAuth
 
-## Learn More
+#### 🔹 Features:
+- **Event management system** (browse, register, and manage events).
+- **User authentication & profile management**.
+- **Admin panel** for managing users, events, and insights.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ⚡ Fed-Backend (Completed)
+A powerful **backend system** supporting FED’s website, built for reliability and efficiency.
+#### 🔹 Tech Stack:
+- **Backend Framework:** Node.js with Express
+- **Database:** MongoDB with Prisma
+- **Authentication:** JWT (JSON Web Token)
+- **Security:** Custom error handling, CORS, Helmet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### 🔹 Features:
+- **User authentication & role-based access control**.
+- **Event management API** (creation, updates, registrations).
+- **Optimized sorting & data management**.
 
-## Deploy on Vercel
+## 📜 Research Publications
+- 📖 **The Role of Artificial Intelligence in Mental Health Care**
+- 🔬 **Artificial Intelligence in Oncology: Understanding the Role of AI in Cancer Diagnosis**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+---
+
+💡 *"Building tech solutions that make a difference."*
