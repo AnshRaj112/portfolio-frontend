@@ -1,62 +1,99 @@
-$primary-color: #ffffff;
-$hover-color: #00c3ff;
-$bg-transparent: rgba(0, 0, 0, 0.5);
+$primary-color: white;
+$hover-color: #9383c9;
+$background-color: transparent;
+$active-color: white;
 
 .header {
   position: fixed;
-  font-size: 25.14px;
   width: 100%;
   top: 0;
   left: 0;
+  background: $background-color;
+  padding: 10px 0;
+  // border-bottom: 2px solid white;
+  z-index: 1000;
+}
+
+.navbar {
+  // font-size: 29px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
-  background: transparent;
-  backdrop-filter: blur(10px); // Slight blur for glass effect
-  transition: 0.3s ease-in-out;
-  z-index: 1000;
-
-  .nav {
-    display: flex;
-    gap: 2rem;
-
-    a {
-      text-decoration: none;
-      color: $primary-color;
-      font-weight: 500;
-      transition: 0.3s;
-
-      &:hover {
-        color: $hover-color;
-      }
-    }
-  }
-
-  .hamburger {
-    display: none;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px) {
-    .nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      left: 50%; // Move to center
-      transform: translateX(-50%); // Adjust centering properly
-      width: 200px;
-      padding: 1rem;
-      border-radius: 10px;
-      background: $bg-transparent;
-      text-align: center; // Ensures text is centered
+  padding: 20 20px;
   
-      &.open {
-        display: flex;
-        justify-content: center; // Centers items horizontally
-        align-items: center;
-      }
-    }
+}
+
+// .logo {
+//   font-size: 20px;
+//   font-weight: bold;
+//   color: white;
+// }
+
+.navItems {
+  display: flex;
+  list-style: none;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.navItems li {
+  margin: 0 15px;
+}
+
+.navItems li a {
+  text-decoration: none;
+  color: $primary-color;
+  font-size: 18px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.navItems li a:hover {
+  color: $hover-color;
+}
+
+/* Active link when scrolling */
+.activeNav {
+  color: $active-color !important;
+  font-weight: bold;
+  border-bottom: 2px solid $active-color;
+}
+
+/* Mobile Navigation */
+.mobileMenu {
+  display: none;
+}
+
+.menuIcon {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar{
+    justify-content: left;
+  }
+  .navItems {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: $background-color;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .navItems.active {
+    display: flex;
+  }
+
+  .navItems li {
+    margin: 15px 0;
+  }
+
+  .mobileMenu {
+    display: block;
   }
 }

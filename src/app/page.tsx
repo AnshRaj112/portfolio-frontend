@@ -1,3 +1,4 @@
+// import Footer from "./components/footer";
 import Header from "./components/Header";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <section id="skills">Skills Section</section>
       <section id="testimonial">Testimonial Section</section>
       <section id="contact">Contact Section</section> */}
+      {/* <Footer /> */}
     </>
   );
 }
