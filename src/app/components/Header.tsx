@@ -1,122 +1,195 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./styles/Header.module.scss";
 
-const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Education", href: "#education" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Research Papers", href: "#research" },
-  { name: "Testimonial", href: "#testimonial" },
-  { name: "Contact", href: "#contact" },
-];
+const Header: React.FC = () => {
+  const router = useRouter();
+  const [scrolling, setScrolling] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
-const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolling, setScrolling] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
+  // Track screen width
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 770);
     };
-    handleResize();
+
+    handleResize(); // Set initial state
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Handle Scroll Effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolling(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock/Unlock Scrolling when Menu Opens
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
     return () => {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
 
-  const scrollToSection = (e: React.MouseEvent, id: string) => {
-    e.preventDefault();
-    const target = document.querySelector(id);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+  // Handle Navigation with Type Annotation
+  const handleNavigation = useCallback(
+    (path: string) => {
+      router.push(path);
       setMenuOpen(false);
-    }
-  };
+    },
+    [router]
+  );
 
   return (
     <header className={`${styles.header} ${scrolling ? styles.scrolled : ""}`}>
       {/* Mobile Menu Toggle */}
       <div className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <RxCross2 size={24} /> : <FaBars size={24} />}
+        {menuOpen ? (
+          <RxCross2 size={24} className={styles.menuToggleIcon} />
+        ) : (
+          <FaBars size={24} />
+        )}
       </div>
 
-      {/* Logo */}
       <div className={styles.logoContainer}>
-        <Link href="/" scroll={false}>
-          <p className={styles.logo}>Ansh Raj</p>
+        <Link href="/">
+          <p>ANSH RAJ</p>
         </Link>
       </div>
 
-      {/* Overlay */}
+      {/* Overlay for Mobile Menu */}
       {menuOpen && isMobile && (
         <motion.div
           className={styles.overlay}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
           onClick={() => setMenuOpen(false)}
-        />
+        ></motion.div>
       )}
 
-      {/* Navigation */}
+      {/* Navigation for Mobile and Desktop */}
       {isMobile ? (
         <AnimatePresence>
           {menuOpen && (
             <motion.nav
-              className={styles.mobileNav}
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.3 }}
+              className={styles.navOptions}
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "100%", opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className={styles.navLink}
+              <div className={styles.menuBox}>
+                <div
+                  className={styles.navItem}
+                  onClick={() => handleNavigation("/search")}
                 >
-                  {link.name}
-                </a>
-              ))}
+                  <span>Home</span>
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => handleNavigation("/help")}
+                >
+                  <span>Education</span>
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => router.push("/login")}
+                >
+                  <span>Projects</span>
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => handleNavigation("/cart")}
+                >
+                  <span>Skills</span>
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => handleNavigation("/cart")}
+                >
+                  <span>Research Paper</span>
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => handleNavigation("/cart")}
+                >
+                  <span>Testimonial</span>
+                </div>
+                <div
+                  className={styles.navItem}
+                  onClick={() => handleNavigation("/cart")}
+                >
+                  <span>Contact</span>
+                </div>
+              </div>
             </motion.nav>
           )}
         </AnimatePresence>
       ) : (
         <nav className={styles.navOptions}>
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
-              className={styles.navLink}
+          <div className={styles.menuBox}>
+            <div
+              className={styles.navItem}
+              onClick={() => handleNavigation("/search")}
             >
-              {link.name}
-            </a>
-          ))}
+              <span>Home</span>
+            </div>
+            <div
+              className={styles.navItem}
+              onClick={() => handleNavigation("/help")}
+            >
+              <span>Education</span>
+            </div>
+            <div
+              className={styles.navItem}
+              onClick={() => router.push("/login")}
+            >
+              <span>Projects</span>
+            </div>
+            <div
+              className={styles.navItem}
+              onClick={() => handleNavigation("/cart")}
+            >
+              <span>Skills</span>
+            </div>
+            <div
+              className={styles.navItem}
+              onClick={() => handleNavigation("/cart")}
+            >
+              <span>Research Paper</span>
+            </div>
+            <div
+              className={styles.navItem}
+              onClick={() => handleNavigation("/cart")}
+            >
+              <span>Testimonial</span>
+            </div>
+            <div
+              className={styles.navItem}
+              onClick={() => handleNavigation("/cart")}
+            >
+              <span>Contact</span>
+            </div>
+          </div>
         </nav>
       )}
     </header>
