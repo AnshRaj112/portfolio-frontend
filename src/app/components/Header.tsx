@@ -2,14 +2,12 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./styles/Header.module.scss";
 
 const Header: React.FC = () => {
-  const router = useRouter();
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -37,28 +35,44 @@ const Header: React.FC = () => {
 
   // Lock/Unlock Scrolling when Menu Opens
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
+    document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
 
-  // Handle Navigation with Type Annotation
-  const handleNavigation = useCallback(
-    (path: string) => {
-      router.push(path);
-      setMenuOpen(false);
-    },
-    [router]
-  );
+  // Smooth Scroll to Section
+  const handleNavigation = useCallback((id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setMenuOpen(false);
+  }, []);
+
+  // Inline styles when header is scrolled
+  const getHeaderStyle = () => {
+    const baseStyle = {
+      position: "fixed" as const,
+      top: 0,
+      width: "100%",
+      zIndex: 10,
+      transition: "all 0.3s ease",
+    };
+
+    if (!scrolling) return baseStyle;
+
+    return {
+      ...baseStyle,
+      background: "rgba(255, 255, 255, 0.1)",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
+      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+    };
+  };
 
   return (
-    <header className={`${styles.header} ${scrolling ? styles.scrolled : ""}`}>
+    <header className={styles.header} style={getHeaderStyle()}>
       {/* Mobile Menu Toggle */}
       <div className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? (
@@ -75,18 +89,20 @@ const Header: React.FC = () => {
       </div>
 
       {/* Overlay for Mobile Menu */}
-      {menuOpen && isMobile && (
-        <motion.div
-          className={styles.overlay}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          onClick={() => setMenuOpen(false)}
-        ></motion.div>
-      )}
+      <AnimatePresence>
+        {menuOpen && isMobile && (
+          <motion.div
+            className={styles.overlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            onClick={() => setMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Navigation for Mobile and Desktop */}
+      {/* Navigation */}
       {isMobile ? (
         <AnimatePresence>
           {menuOpen && (
@@ -98,48 +114,29 @@ const Header: React.FC = () => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <div className={styles.menuBox}>
-                <div
-                  className={styles.navItem}
-                  onClick={() => handleNavigation("/search")}
-                >
-                  <span>Home</span>
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => handleNavigation("/help")}
-                >
-                  <span>Education</span>
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => router.push("/login")}
-                >
-                  <span>Projects</span>
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => handleNavigation("/cart")}
-                >
-                  <span>Skills</span>
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => handleNavigation("/cart")}
-                >
-                  <span>Research Paper</span>
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => handleNavigation("/cart")}
-                >
-                  <span>Testimonial</span>
-                </div>
-                <div
-                  className={styles.navItem}
-                  onClick={() => handleNavigation("/cart")}
-                >
-                  <span>Contact</span>
-                </div>
+                {[
+                  "home",
+                  "education",
+                  "projects",
+                  "skills",
+                  "research",
+                  "testimonial",
+                  "contact",
+                ].map((id) => (
+                  <div
+                    key={id}
+                    className={styles.navItem}
+                    onClick={() => handleNavigation(id)}
+                  >
+                    <span>
+                      {id.charAt(0).toUpperCase() +
+                        id
+                          .slice(1)
+                          .replace("testimonial", "Testimonial")
+                          .replace("research", "Research Paper")}
+                    </span>
+                  </div>
+                ))}
               </div>
             </motion.nav>
           )}
@@ -147,48 +144,29 @@ const Header: React.FC = () => {
       ) : (
         <nav className={styles.navOptions}>
           <div className={styles.menuBox}>
-            <div
-              className={styles.navItem}
-              onClick={() => handleNavigation("/search")}
-            >
-              <span>Home</span>
-            </div>
-            <div
-              className={styles.navItem}
-              onClick={() => handleNavigation("/help")}
-            >
-              <span>Education</span>
-            </div>
-            <div
-              className={styles.navItem}
-              onClick={() => router.push("/login")}
-            >
-              <span>Projects</span>
-            </div>
-            <div
-              className={styles.navItem}
-              onClick={() => handleNavigation("/cart")}
-            >
-              <span>Skills</span>
-            </div>
-            <div
-              className={styles.navItem}
-              onClick={() => handleNavigation("/cart")}
-            >
-              <span>Research Paper</span>
-            </div>
-            <div
-              className={styles.navItem}
-              onClick={() => handleNavigation("/cart")}
-            >
-              <span>Testimonial</span>
-            </div>
-            <div
-              className={styles.navItem}
-              onClick={() => handleNavigation("/cart")}
-            >
-              <span>Contact</span>
-            </div>
+            {[
+              "home",
+              "education",
+              "projects",
+              "skills",
+              "research",
+              "testimonial",
+              "contact",
+            ].map((id) => (
+              <div
+                key={id}
+                className={styles.navItem}
+                onClick={() => handleNavigation(id)}
+              >
+                <span>
+                  {id.charAt(0).toUpperCase() +
+                    id
+                      .slice(1)
+                      .replace("testimonial", "Testimonial")
+                      .replace("research", "Research Paper")}
+                </span>
+              </div>
+            ))}
           </div>
         </nav>
       )}

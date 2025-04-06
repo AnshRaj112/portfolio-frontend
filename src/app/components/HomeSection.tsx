@@ -9,13 +9,23 @@ const Home = () => {
       <div className={styles.content}>
         <div className={styles.text}>
           <h1>
-            Welcome to <br></br> <span className={styles.highlight}>My Codeverse</span>
+            Welcome to <br />
+            <span className={`${styles.highlight} ${styles.typewriter}`}>My Codeverse</span>
           </h1>
-          <p>
-            A sculptor of structure and a strategist of scalable systems, I transform ideas into functional realities. Whether crafting fluid UI/UX interfaces or engineering efficient backend logic, I build seamless, responsive ecosystems that resonate with users.
+          <p className={styles.fadeIn}>
+            A sculptor of structure and a strategist of scalable systems, I transform ideas into functional realities. 
             <br /><br />
             I don&apos;t just develop applications. I create digital realms where imagination meets intention, and innovation finds form. Driven by purpose and guided by curiosity, I push boundaries with every project I undertake.
           </p>
+
+          <a
+            href="https://drive.google.com/file/d/1CwN0HhSgOOzBOL3bU25C3H2cwi23E5W3/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.resumeButton}
+          >
+            Download Resume
+          </a>
         </div>
 
         <div className={styles.imageContainer}>
