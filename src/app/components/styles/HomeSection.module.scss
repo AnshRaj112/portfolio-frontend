@@ -1,0 +1,68 @@
+.home {
+    background-color: #000;
+    color: #fff;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .content {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      width: 100%;
+      flex-wrap: wrap;
+  
+      .text {
+        flex: 1 1 500px;
+  
+        h1 {
+          font-size: 3rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+  
+          .highlight {
+            color: #ff4c4c;
+          }
+        }
+  
+        p {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          color: #fff;
+  
+          strong {
+            font-weight: 600;
+          }
+        }
+      }
+  
+      .imageContainer {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        flex-shrink: 0;
+  
+        .heroImage {
+          object-fit: contain;
+          transition: opacity 0.4s ease-in-out;
+          opacity: 0.25;
+  
+          &:hover {
+            opacity: 1;
+          }
+        }
+  
+        @media (max-width: 768px) {
+          width: 100%;
+          height: 300px;
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+  
