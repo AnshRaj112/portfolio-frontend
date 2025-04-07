@@ -104,10 +104,12 @@
       text-decoration: none;
       font-weight: 600;
       border-radius: 8px;
-      transition: box-shadow 0.3s ease;
+      transition: all 0.3s ease;
 
       &:hover {
+        transform: translateY(-5px) scale(1.05);
         box-shadow: 0 0 20px #352f36;
+        color: #ff4c4c;
       }
     }
 
