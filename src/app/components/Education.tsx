@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import EducationCard from "./EducationCard";
 import styles from "./styles/Education.module.scss";
+import SkeletonEducationCard from "./SkeletonEducationCard";
 
 interface EducationData {
   institution: string;
@@ -33,10 +34,12 @@ const Education = () => {
     <div className={styles.wrapper}>
       <h1>Education</h1>
       <div className={styles.cardWrapper}>
-        {educationList.map((edu, index) => (
-          <EducationCard key={index} {...edu} />
-        ))}
-      </div>
+      {educationList.length === 0
+        ? Array.from({ length: 3 }).map((_, i) => <SkeletonEducationCard key={i} />)
+        : educationList.map((edu, index) => (
+            <EducationCard key={index} {...edu} />
+          ))}
+    </div>
     </div>
   );
 };

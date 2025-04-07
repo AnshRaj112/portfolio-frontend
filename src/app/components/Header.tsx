@@ -74,14 +74,25 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header} style={getHeaderStyle()}>
       {/* Mobile Menu Toggle */}
-      <div className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
+      <div
+        className={styles.menuToggle}
+        style={{ color: "#fff" }}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         {menuOpen ? (
-          <RxCross2 size={24} className={styles.menuToggleIcon} />
+          <RxCross2
+            size={24}
+            className={styles.menuToggleIcon}
+            style={{ color: "#fff" }}
+          />
         ) : (
-          <FaBars size={24} />
+          <FaBars
+            size={24}
+            className={styles.menuToggleIcon}
+            style={{ color: "#fff" }}
+          />
         )}
       </div>
-
       <div className={styles.logoContainer}>
         <Link href="/">
           <p>ANSH RAJ</p>
@@ -113,7 +124,7 @@ const Header: React.FC = () => {
               exit={{ x: "100%", opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <div className={styles.menuBox}>
+              <div className={styles.menuBox} style={{ color: "#fff" }}>
                 {[
                   "home",
                   "education",
@@ -143,7 +154,7 @@ const Header: React.FC = () => {
         </AnimatePresence>
       ) : (
         <nav className={styles.navOptions}>
-          <div className={styles.menuBox}>
+          <div className={styles.menuBox} style={{ color: "#fff" }}>
             {[
               "home",
               "education",
