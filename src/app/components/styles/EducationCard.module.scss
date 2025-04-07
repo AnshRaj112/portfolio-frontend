@@ -6,7 +6,7 @@
     box-shadow: 0 0 15px #2e293a;
     transition: all 0.3s ease;
     width: 90%;
-    max-width: 400px;
+    width: 435px;
     margin: 20px auto;
   
     &:hover {
@@ -68,6 +68,7 @@
   @media screen and (max-width: 768px) {
     .card {
       padding: 16px;
+      max-width: 350px;
     }
   
     .institution {
