@@ -1,0 +1,62 @@
+.card {
+    background-color: #352F36;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    width: 400px;
+    margin: 0 auto;
+  
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+  }
+  
+  .institution {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+    color: #fff;
+  }
+  
+  .degree {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  
+  .meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.9rem;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+  
+    svg {
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+  }
+  
+  .subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #000;
+    margin-top: 10px;
+    align-items: center;
+  }
+  
+  .subject {
+    background: #f1f1f1;
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+  }
+  
