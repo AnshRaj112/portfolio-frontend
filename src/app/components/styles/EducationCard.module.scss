@@ -5,13 +5,14 @@
     padding: 20px;
     box-shadow: 0 0 15px #2e293a;
     transition: all 0.3s ease;
-    width: 400px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
   
     &:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 0 25px #352f36;
-        color: #ff4c4c;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 25px #352f36;
+      color: #ff4c4c;
     }
   }
   
@@ -31,6 +32,7 @@
   
   .meta {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     font-size: 0.9rem;
     color: #fff;
@@ -60,5 +62,44 @@
     border-radius: 12px;
     display: flex;
     align-items: center;
+  }
+  
+  /* ✅ Media Queries for Responsiveness */
+  @media screen and (max-width: 768px) {
+    .card {
+      padding: 16px;
+    }
+  
+    .institution {
+      font-size: 1.3rem;
+    }
+  
+    .degree {
+      font-size: 0.95rem;
+    }
+  
+    .meta {
+      font-size: 0.85rem;
+    }
+  
+    .subjects {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .card {
+      padding: 14px;
+    }
+  
+    .institution {
+      font-size: 1.2rem;
+    }
+  
+    .degree,
+    .meta,
+    .subjects {
+      font-size: 0.8rem;
+    }
   }
   
