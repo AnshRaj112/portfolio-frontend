@@ -1,0 +1,63 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    gap: 2rem;
+    padding: 2rem;
+  
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #ff4c4c;
+      text-align: center;
+    }
+  }
+
+  .skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 120px); /* Fixed width */
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, 120px); /* Same for larger screens */
+    }
+  }
+  
+  .skillsContainer > * {
+    width: 120px;
+    height: 139px;
+
+  }
+  
+  
+  .skillItem {
+    background-color: #352f36;
+    border: 2px solid #2e293a;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px #2e293a;
+  
+    &:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 0 25px #352f36;
+        color: #ff4c4c;
+      }
+  
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin: 0 auto 0.5rem; /* centers the image and adds bottom spacing */
+      display: block; /* ensures it's treated like a block-level element */
+    }
+  
+    p {
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+  

@@ -4,6 +4,7 @@ import AboutMe from "./components/AboutMe";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Project from "./components/Project";
+import SkillsList from "./components/SkillsList";
 
 export default function Landing() {
   return (
@@ -19,6 +20,9 @@ export default function Landing() {
       <Experience />
       <section id="projects">
         <Project />
+      </section>
+      <section id="skills">
+        <SkillsList />
       </section>
     </div>
   );
