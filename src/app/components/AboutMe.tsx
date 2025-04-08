@@ -96,7 +96,7 @@ const AboutMe = () => {
                 <FaXTwitter />
                 <span>X</span>
               </a>
-              <a
+              {/* <a
                 href="https://x.com/AnshRaj_112"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -104,7 +104,7 @@ const AboutMe = () => {
               >
                 <FaXTwitter />
                 <span>X</span>
-              </a>
+              </a> */}
               <a
                 href="https://medium.com/@anshraj112"
                 target="_blank"

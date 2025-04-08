@@ -57,8 +57,7 @@ export const ProjectModal = ({ id, onClose }: Props) => {
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <button onClick={onClose} className={styles.close}>
-          {" "}
-          ✖{" "}
+          ✖
         </button>
         <div className={styles.carousel}>
           <Image

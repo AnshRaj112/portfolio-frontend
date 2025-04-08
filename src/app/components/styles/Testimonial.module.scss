@@ -1,0 +1,48 @@
+.testimonialSection {
+  padding: 4rem 2rem;
+  background-color: #000;
+  color: #ffffff;
+  text-align: left;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    color: #ff4c4c;
+    text-align: center;
+  }
+
+  .testimonialContainer {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+
+    .testimonialTrack {
+      display: flex;
+      gap: 2rem;
+      width: max-content;
+      animation: scrollLeft 40s linear infinite;
+
+      > * {
+        flex: 0 0 auto;
+        width: 320px;
+      }
+    }
+
+    &.paused {
+      .testimonialTrack {
+        cursor: pointer;
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}

@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Project from "./components/Project";
 import SkillsList from "./components/SkillsList";
 import ResearchList from "./components/ResearchList";
+import Testimonials from "./components/Testimonials";
 
 export default function Landing() {
   return (
@@ -27,6 +28,9 @@ export default function Landing() {
       </section>
       <section id="research">
         <ResearchList />
+      </section>
+      <section id="testimonial">
+        <Testimonials />
       </section>
     </div>
   );

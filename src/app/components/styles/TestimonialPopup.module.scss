@@ -1,0 +1,48 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup {
+  width: 400px;
+  background-color: #352f36;
+  border: 2px solid #2e293a;
+  padding: 2rem;
+  border-radius: 16px;
+  color: white;
+  text-align: left;
+  box-shadow: 0 0 20px #352f36;
+  position: relative;
+
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .footer {
+    margin-top: 1.5rem;
+    h4 {
+      margin: 0;
+    }
+    p {
+      color: #aaa;
+    }
+  }
+
+
+}
