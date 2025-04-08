@@ -3,6 +3,7 @@ import Home from "./components/HomeSection";
 import AboutMe from "./components/AboutMe";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import Project from "./components/Project";
 
 export default function Landing() {
   return (
@@ -16,6 +17,9 @@ export default function Landing() {
         <Education />
       </section>
       <Experience />
+      <section id="projects">
+        <Project />
+      </section>
     </div>
   );
 }

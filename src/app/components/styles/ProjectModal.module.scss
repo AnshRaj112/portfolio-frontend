@@ -1,0 +1,82 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  }
+  
+  .modal {
+    background-color: #352f36;
+    border: 2px solid #2e293a;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    color: white;
+    box-shadow: 0 0 20px #352f36;
+    position: relative;
+  
+    .close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+      justify-content: center;
+  
+      img {
+        border-radius: 8px;
+      }
+    }
+  
+    .description {
+      color: #ccc;
+      margin: 1rem 0;
+    }
+  
+    .techStack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+  
+      span {
+        background: #ff4c4c;
+        color: white;
+        padding: 0.3rem 0.6rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .visitBtn {
+      background: #ff4c4c;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+  
+      &:hover {
+        background: #ff3333;
+      }
+    }
+  }
+  

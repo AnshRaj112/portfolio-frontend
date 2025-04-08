@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import styles from "./styles/ExperiencePopup.module.scss";
+import { FaCircle } from "react-icons/fa6";
 
 interface ExperienceDetailProps {
   id: string;
@@ -19,7 +20,10 @@ interface ExperienceData {
   companyUrl: string;
 }
 
-export const ExperiencePopup: React.FC<ExperienceDetailProps> = ({ id, onClose }) => {
+export const ExperiencePopup: React.FC<ExperienceDetailProps> = ({
+  id,
+  onClose,
+}) => {
   const [data, setData] = useState<ExperienceData | null>(null);
 
   useEffect(() => {
@@ -29,11 +33,12 @@ export const ExperiencePopup: React.FC<ExperienceDetailProps> = ({ id, onClose }
       document.body.style.overflow = "";
     };
   }, []);
-  
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/experience/${id}`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/experience/${id}`
+      );
       const result = await res.json();
       setData(result);
     };
@@ -45,17 +50,30 @@ export const ExperiencePopup: React.FC<ExperienceDetailProps> = ({ id, onClose }
   return (
     <div className={styles.popupOverlay}>
       <div className={styles.popup}>
-        <button onClick={onClose} className={styles.closeBtn}>✖</button>
+        <button onClick={onClose} className={styles.closeBtn}>
+          ✖
+        </button>
         <img src={data.logoUrl} alt="Company Logo" className={styles.logo} />
         <h2>{data.role}</h2>
         <h3>{data.company}</h3>
-        <p><strong>Location:</strong> {data.location}</p>
-        <p><strong>Duration:</strong> {data.duration}</p>
-        <p><strong>Overview:</strong> {data.overview}</p>
-        <p><strong>Achievements:</strong></p>
+        <p>
+          <strong>Location:</strong> {data.location}
+        </p>
+        <p>
+          <strong>Duration:</strong> {data.duration}
+        </p>
+        <p>
+          <strong>Overview:</strong> {data.overview}
+        </p>
+        <p>
+          <strong>Achievements:</strong>
+        </p>
         <ul>
           {data.achievements.map((ach, i) => (
-            <li key={i}>{ach}</li>
+            <li key={i}>
+              <FaCircle className={styles.bulletIcon} />
+              <span>{ach}</span>
+            </li>
           ))}
         </ul>
         <a href={data.companyUrl} target="_blank" rel="noopener noreferrer">
