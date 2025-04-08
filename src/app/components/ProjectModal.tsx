@@ -29,7 +29,9 @@ export const ProjectModal = ({ id, onClose }: Props) => {
 
   useEffect(() => {
     const fetchProject = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/projects/${id}`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/projects/${id}`
+      );
       const data = await res.json();
       setProject(data);
     };
@@ -54,7 +56,10 @@ export const ProjectModal = ({ id, onClose }: Props) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <button onClick={onClose} className={styles.close}>×</button>
+        <button onClick={onClose} className={styles.close}>
+          {" "}
+          ✖{" "}
+        </button>
         <div className={styles.carousel}>
           <Image
             src={project.images[currentIndex]}

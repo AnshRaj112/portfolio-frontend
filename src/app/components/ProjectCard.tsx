@@ -22,14 +22,16 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
 
   return (
     <div className={styles.card}>
-      <Image
-        src={thumbnail}
-        alt={name}
-        width={300}
-        height={200}
-        className={styles.image}
-      />
-      <h3>{name}</h3>
+      <div className={styles.content}>
+        <Image
+          src={thumbnail}
+          alt={name}
+          width={300}
+          height={200}
+          className={styles.image}
+        />
+        <h3>{name}</h3>
+      </div>
       <div className={styles.buttons}>
         <button onClick={() => setShowModal(true)}>Know More</button>
         <a

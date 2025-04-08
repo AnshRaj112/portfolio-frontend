@@ -1,14 +1,34 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: #000;
-    gap: 2rem;
-    padding: 2rem;
-  
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-      color: #ff4c4c;
-      text-align: center;
-    }
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  gap: 2rem;
+  padding: 2rem;
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #ff4c4c;
+    text-align: center;
   }
+}
+
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; // ensures centering if less than 3
+  gap: 2rem; // optional spacing between cards
+}
+
+.cardWrapper > * {
+  flex: 1 1 calc(33.333% - 2rem); // three per row with gap compensation
+  max-width: calc(33.333% - 2rem);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .cardWrapper > * {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
