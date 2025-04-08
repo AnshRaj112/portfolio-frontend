@@ -1,0 +1,34 @@
+.certifications {
+  padding: 4rem 2rem;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    color: #ff4c4c;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* default for mobile */
+    gap: 2rem;
+    justify-content: center;    
+    justify-items: center;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr); /* tablets */
+      justify-content: center;    
+      justify-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr); /* desktop */
+      justify-content: center;    
+      justify-items: center;
+    }
+  }
+}

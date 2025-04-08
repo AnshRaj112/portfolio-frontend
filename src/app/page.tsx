@@ -7,6 +7,7 @@ import Project from "./components/Project";
 import SkillsList from "./components/SkillsList";
 import ResearchList from "./components/ResearchList";
 import Testimonials from "./components/Testimonials";
+import Certifications from "./components/Certifications";
 
 export default function Landing() {
   return (
@@ -32,6 +33,7 @@ export default function Landing() {
       <section id="testimonial">
         <Testimonials />
       </section>
+      <Certifications />
     </div>
   );
 }
