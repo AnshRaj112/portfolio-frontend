@@ -5,6 +5,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Project from "./components/Project";
 import SkillsList from "./components/SkillsList";
+import ResearchList from "./components/ResearchList";
 
 export default function Landing() {
   return (
@@ -23,6 +24,9 @@ export default function Landing() {
       </section>
       <section id="skills">
         <SkillsList />
+      </section>
+      <section id="research">
+        <ResearchList />
       </section>
     </div>
   );
