@@ -34,26 +34,26 @@ const AboutMe = () => {
           <h2>About <span className={styles.name}>Me</span></h2>
 
           <div className={hasAnimated ? styles.fadeIn : ""}>
-            <h3>Who I Am</h3>
+            {/* <h3>Who I Am</h3> */}
             <p>
-              I&apos;m <span className={styles.name}>Ansh Raj</span> — a curious
+              I&apos;m <span className={styles.name}>Ansh Raj</span>  a curious
               mind and full-stack web developer who believes that every line of
               code is a step toward mastery.
             </p>
             <p className={styles.funFact}>
-              ☕ Fun fact: I’m a total coffee addict — espresso is basically my
+              Fun fact: I’m a total coffee addict. Espresso is basically my
               coding fuel.
             </p>
           </div>
 
           <div className={hasAnimated ? styles.fadeIn : ""}>
-            <h3>What Drives Me</h3>
+            {/* <h3>What Drives Me</h3> */}
             <p>
               Fueled by a relentless drive to learn, I’m constantly exploring
               new technologies, refining my craft, and embracing the evolving
               rhythm of the digital world. Whether I’m building responsive
               interfaces or architecting scalable systems, I aim to create
-              solutions that not only work — but feel right.
+              solutions that not only work,  but feel right.
             </p>
             <p>
               For me, development is more than deployment; it’s a journey of

@@ -9,6 +9,7 @@ import ResearchList from "./components/ResearchList";
 import Testimonials from "./components/Testimonials";
 import Certifications from "./components/Certifications";
 import Contact from "./components/contact";
+import Footer from "./components/Footer";
 
 export default function Landing() {
   return (
@@ -38,6 +39,7 @@ export default function Landing() {
       <section id="contact">
         <Contact />
       </section>
+      <Footer />
     </div>
   );
 }
