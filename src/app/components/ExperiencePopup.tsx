@@ -11,7 +11,7 @@ interface ExperienceDetailProps {
 
 interface ExperienceData {
   logoUrl: string;
-  role: string;
+  post: string;
   company: string;
   location: string;
   duration: string;
@@ -54,7 +54,7 @@ export const ExperiencePopup: React.FC<ExperienceDetailProps> = ({
           ✖
         </button>
         <img src={data.logoUrl} alt="Company Logo" className={styles.logo} />
-        <h2>{data.role}</h2>
+        <h2>{data.post}</h2>
         <h3>{data.company}</h3>
         <p>
           <strong>Location:</strong> {data.location}
