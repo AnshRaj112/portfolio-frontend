@@ -104,8 +104,15 @@ const Footer = () => {
             <ul>
               <li onClick={() => scrollToSection("home")}>Home</li>
               <li onClick={() => scrollToSection("about")}>About</li>
+              <li onClick={() => scrollToSection("education")}>Education</li>
               <li onClick={() => scrollToSection("projects")}>Projects</li>
               <li onClick={() => scrollToSection("skills")}>Skills</li>
+              <li onClick={() => scrollToSection("research")}>
+                Research Papers
+              </li>
+              <li onClick={() => scrollToSection("testimonial")}>
+                Testimonial
+              </li>
               <li onClick={() => scrollToSection("contact")}>Contact</li>
             </ul>
           </div>
@@ -114,17 +121,19 @@ const Footer = () => {
             <h3>Contact Info</h3>
             <ul>
               <li>
-                <CiMail /> anshraj112@gmail.com
+                <CiMail />
+                <a href="mailto:anshraj112@gmail.com">anshraj112@gmail.com</a>
               </li>
               <li>
-                <FaPhone /> +91 7737549787
+                <FaPhone />
+                <a href="tel:+917737549787">+91 7737549787</a>
               </li>
               <li>
-                <MdLocationPin /> Bikramganj, Rohtas, BR
+                <MdLocationPin />
+                Bikramganj, Rohtas, BR
               </li>
             </ul>
           </div>
-
           <div className={styles.newsletter}>
             <h3>Newsletter</h3>
             <p>
