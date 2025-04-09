@@ -25,18 +25,19 @@ const AboutMe = () => {
           <Image
             src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742975199/1708155734063-Photoroom_ljgfi6.png"
             alt="Ansh Raj"
-            width={300}
-            height={300}
+            fill
             className={styles.profileImage}
           />
         </div>
         <div className={styles.textContent}>
-          <h2>About <span className={styles.name}>Me</span></h2>
+          <h2>
+            About <span className={styles.name}>Me</span>
+          </h2>
 
           <div className={hasAnimated ? styles.fadeIn : ""}>
             {/* <h3>Who I Am</h3> */}
             <p>
-              I&apos;m <span className={styles.name}>Ansh Raj</span>  a curious
+              I&apos;m <span className={styles.name}>Ansh Raj</span> a curious
               mind and full-stack web developer who believes that every line of
               code is a step toward mastery.
             </p>
@@ -53,7 +54,7 @@ const AboutMe = () => {
               new technologies, refining my craft, and embracing the evolving
               rhythm of the digital world. Whether I’m building responsive
               interfaces or architecting scalable systems, I aim to create
-              solutions that not only work,  but feel right.
+              solutions that not only work, but feel right.
             </p>
             <p>
               For me, development is more than deployment; it’s a journey of
@@ -67,7 +68,9 @@ const AboutMe = () => {
               hasAnimated ? styles.fadeIn : ""
             }`}
           >
-            <h3>Let’s <span className={styles.name}>Connect</span></h3>
+            <h3>
+              Let’s <span className={styles.name}>Connect</span>
+            </h3>
             <div className={styles.iconGrid}>
               <a
                 href="https://github.com/anshraj112"
@@ -96,15 +99,6 @@ const AboutMe = () => {
                 <FaXTwitter />
                 <span>X</span>
               </a>
-              {/* <a
-                href="https://x.com/AnshRaj_112"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.iconCard}
-              >
-                <FaXTwitter />
-                <span>X</span>
-              </a> */}
               <a
                 href="https://medium.com/@anshraj112"
                 target="_blank"

@@ -66,9 +66,32 @@
         font-size: 1.1rem;
         line-height: 1.8;
         color: #fff;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-out forwards;
+        animation-delay: 0.2s;
+        will-change: opacity, transform;
 
         strong {
           font-weight: 600;
+        }
+      }
+
+      .resumeButton {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #352f36;
+        border: 2px solid #2e293a;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px) scale(1.05);
+          box-shadow: 0 0 20px #352f36;
+          color: #ff4c4c;
         }
       }
     }
@@ -78,39 +101,8 @@
       overflow: hidden;
       white-space: nowrap;
       width: 0ch;
-
-      /* Cursor line */
       border-right: 2px solid white;
-
-      /* Animations */
-      animation: typewriter 2.5s steps(12) forwards, blink 0.75s step-end 4,
-        hideCursor 0s 3s forwards; // Disappear cursor after 3.1s
-    }
-
-    .fadeIn {
-      opacity: 0;
-      animation: fadeIn 0.3s ease-out forwards;
-      animation-delay: 0.2s;
-      will-change: opacity, transform;
-    }
-
-    .resumeButton {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #352f36;
-      border: 2px solid #2e293a;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 0 20px #352f36;
-        color: #ff4c4c;
-      }
+      animation: typewriter 2.5s steps(12) forwards, blink 0.75s step-end 4, hideCursor 0s 3s forwards;
     }
 
     .imageContainer {
@@ -128,11 +120,74 @@
           opacity: 1;
         }
       }
+    }
+  }
 
-      @media (max-width: 768px) {
+  // Media Queries for responsiveness
+  @media (max-width: 1024px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .text {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        .resumeButton {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .imageContainer {
         width: 100%;
         height: 300px;
         margin-top: 2rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      .text {
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+        }
+      }
+
+      .imageContainer {
+        height: 250px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      padding: 0 1rem;
+
+      .text {
+        h1 {
+          font-size: 1.75rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          line-height: 1.6;
+        }
+      }
+
+      .imageContainer {
+        height: 200px;
       }
     }
   }

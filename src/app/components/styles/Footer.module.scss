@@ -24,7 +24,7 @@
         font-weight: 600;
 
         .highlight {
-          color: #FF4C4C;
+          color: #ff4c4c;
         }
       }
 
@@ -51,7 +51,7 @@
           transition: color 0.3s;
 
           &:hover {
-            color: #FF4C4C;
+            color: #ff4c4c;
           }
         }
       }
@@ -67,48 +67,78 @@
           transition: 0.3s ease;
 
           &:hover {
-            color: #FF4C4C;
+            color: #ff4c4c;
           }
         }
       }
-      
+
       .subscribeBox {
         display: flex;
+        flex-wrap: wrap;
         margin-top: 0.5rem;
+        gap: 0.5rem;
 
         input {
-          flex: 1;
+          flex: 1 1 auto;
           padding: 0.5rem;
           border: 2px solid #ff4c4c;
-          border-radius: 4px 0 0 4px;
+          border-radius: 4px;
           outline: none;
-          transition: 0.3s;
           background-color: #2e293a;
+          min-width: 0;
 
           &:focus {
-            border: 2px solid #ff4c4c;
-            outline: none;
             box-shadow: 0 0 8px #ff4c4c;
           }
         }
 
         button {
+          flex: 0 0 auto;
           padding: 0.5rem 1rem;
-          background: #FF4C4C;
+          background: #ff4c4c;
           color: white;
           border: none;
-          border-radius: 0 4px 4px 0;
+          border-radius: 4px;
           cursor: pointer;
+          transition: all 0.3s ease;
+          white-space: nowrap;
 
           &:hover {
             opacity: 0.9;
+          }
+        }
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: stretch;
+
+          input,
+          button {
+            width: 100%;
+            border-radius: 4px;
+          }
+
+          button {
+            font-size: 0.9rem;
+            padding: 0.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          button {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+          }
+
+          input {
+            padding: 0.4rem;
           }
         }
       }
 
       .message {
         margin-top: 0.5rem;
-        color: #FF4C4C;
+        color: #ff4c4c;
         font-size: 0.85rem;
       }
     }
@@ -121,51 +151,59 @@
     border-top: 1px solid #171417;
     padding-top: 1rem;
     font-size: 0.9rem;
-  
+
     .left,
     .center,
     .right {
       flex: 1;
     }
-  
+
     .left {
       text-align: left;
     }
-  
+
     .center {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 0.4rem;
       text-align: center;
-  
+
       .heart {
         color: red;
         display: inline-block;
         animation: pulse 1.3s infinite;
       }
     }
-  
+
     .right {
       display: flex;
       justify-content: flex-end;
-  
+
       .upArrow {
         font-size: 1.5rem;
-        color: #FF4C4C;
+        color: #ff4c4c;
         cursor: pointer;
         transition: transform 0.3s;
-  
+
         &:hover {
           transform: translateY(-4px);
         }
       }
     }
-  }  
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  25%, 75% { transform: scale(1.2); }
-  50% { transform: scale(1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25%,
+  75% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
 }
