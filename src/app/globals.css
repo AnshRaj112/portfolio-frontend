@@ -125,3 +125,41 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Scrollbar for Desktop */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF4C4C; 
+  border-radius: 10px;
+
+  &:hover {
+    background-color: darken(#FF4C4C, 10%); 
+  }
+}
+
+/* Firefox support */
+body {
+  scrollbar-color: #FF4C4C #1e1e1e; /* thumb track */
+  scrollbar-width: thin;
+}
+
+/* Hide scrollbar on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE & Edge */
+  }
+}
+
