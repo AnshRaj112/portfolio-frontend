@@ -42,12 +42,12 @@ const AboutMe = () => {
               and click open on your desktop.
             </p>
             <p className={styles.funFact}>
-              Fun fact: I run on coffee. Espresso doesn’t just keep me awake —
+              Fun fact: I run on coffee. Espresso doesn&apos;t just keep me awake —
               it codes with me.
             </p>
 
             <p>
-              My work isn’t boxed into one screen size or platform. I create{" "}
+              My work isn&apos;t boxed into one screen size or platform. I create{" "}
               <span className={styles.name}>web applications</span>, bring ideas
               to life as <span className={styles.name}>mobile apps</span>, and
               craft smooth, functional{" "}
@@ -60,7 +60,7 @@ const AboutMe = () => {
               because it has to be, but because I want it to be.
             </p>
             <p>
-              I don’t chase trends. I follow curiosity. That’s what keeps me
+              I don&apos;t chase trends. I follow curiosity. That&apos;s what keeps me
               moving.
             </p>
           </div>
@@ -71,7 +71,7 @@ const AboutMe = () => {
             }`}
           >
             <h3>
-              Let’s <span className={styles.name}>Connect</span>
+              Let&apos;s <span className={styles.name}>Connect</span>
             </h3>
             <div className={styles.iconGrid}>
               <a
