@@ -40,11 +40,17 @@
   align-items: center;
   margin-bottom: 12px;
 
+  span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
   svg {
-    margin-right: 4px;
     vertical-align: middle;
   }
 }
+
 
 .subjects {
   display: flex;
