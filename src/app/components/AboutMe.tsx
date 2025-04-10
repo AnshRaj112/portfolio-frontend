@@ -37,29 +37,31 @@ const AboutMe = () => {
           <div className={hasAnimated ? styles.fadeIn : ""}>
             {/* <h3>Who I Am</h3> */}
             <p>
-              I&apos;m <span className={styles.name}>Ansh Raj</span> a curious
-              mind and full-stack web developer who believes that every line of
-              code is a step toward mastery.
+              I&apos;m <span className={styles.name}>Ansh Raj</span>, a builder
+              at heart — I make things that live on the web, run on your phone,
+              and click open on your desktop.
             </p>
             <p className={styles.funFact}>
-              Fun fact: I’m a total coffee addict. Espresso is basically my
-              coding fuel.
+              Fun fact: I run on coffee. Espresso doesn’t just keep me awake —
+              it codes with me.
             </p>
-          </div>
 
-          <div className={hasAnimated ? styles.fadeIn : ""}>
-            {/* <h3>What Drives Me</h3> */}
             <p>
-              Fueled by a relentless drive to learn, I’m constantly exploring
-              new technologies, refining my craft, and embracing the evolving
-              rhythm of the digital world. Whether I’m building responsive
-              interfaces or architecting scalable systems, I aim to create
-              solutions that not only work, but feel right.
+              My work isn’t boxed into one screen size or platform. I create{" "}
+              <span className={styles.name}>web applications</span>, bring ideas
+              to life as <span className={styles.name}>mobile apps</span>, and
+              craft smooth, functional{" "}
+              <span className={styles.name}>desktop software</span> — all with
+              equal passion.
             </p>
             <p>
-              For me, development is more than deployment; it’s a journey of
-              discovery, iteration, and meaningful creation. Every challenge is
-              a chance to grow. Every idea, an opportunity to innovate.
+              I care about how things feel when someone uses them. Every project
+              is a personal experiment, a version better than the last — not
+              because it has to be, but because I want it to be.
+            </p>
+            <p>
+              I don’t chase trends. I follow curiosity. That’s what keeps me
+              moving.
             </p>
           </div>
 

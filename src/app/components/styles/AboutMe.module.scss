@@ -93,6 +93,29 @@
         }
       }
 
+      .funFact {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #ff6f6f; // Muted grey-blue, easy on the eyes
+        margin: 1rem 0;
+        position: relative;
+        padding-left: 1.5rem;
+      
+        // &::before {
+        //   content: '💡';
+        //   position: absolute;
+        //   left: 0;
+        //   top: 0.05rem;
+        //   font-size: 1.2rem;
+        //   transition: transform 0.3s ease;
+        // }
+      
+        &:hover::before {
+          transform: rotate(10deg) scale(1.1);
+        }
+      }
+      
+
       .fadeIn {
         opacity: 0;
         animation: fadeIn 0.5s ease-out forwards;

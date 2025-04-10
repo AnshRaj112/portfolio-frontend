@@ -8,14 +8,15 @@ const Home = () => {
     <section className={styles.home} id="home">
       <div className={styles.content}>
         <div className={styles.text}>
-          <h1>
-            Welcome to <br />
-            <span className={`${styles.highlight} ${styles.typewriter}`}>My Codeverse</span>
+          <h1 className={styles.introLine}>
+            Hi, I am <br/> <span className={styles.highlight}>Ansh Raj</span> and I am a <br/>
+            <span className={`${styles.highlight} ${styles.typewriter}`}>Developer</span>
           </h1>
+
           <p className={styles.fadeIn}>
-            A sculptor of structure and a strategist of scalable systems, I transform ideas into functional realities. 
+            I build web applications, Android apps, and Windows software.
             <br /><br />
-            I don&apos;t just develop applications. I create digital realms where imagination meets intention, and innovation finds form. Driven by purpose and guided by curiosity, I push boundaries with every project I undertake.
+            I enjoy learning new things and creating useful tools that work well. I believe in building step by step and always improving with practice.
           </p>
 
           <a
