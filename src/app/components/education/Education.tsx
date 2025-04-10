@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import EducationCard from "./EducationCard";
 import styles from "./styles/Education.module.scss";
-import SkeletonEducationCard from "./SkeletonEducationCard";
+import SkeletonEducationCard from "../SkeletonEducationCard";
 
 interface EducationData {
   institution: string;

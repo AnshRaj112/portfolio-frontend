@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/EducationCard.module.scss";
+import styles from "./education/styles/EducationCard.module.scss";
 import skeletonStyles from "./styles/Skeleton.module.scss"; // create this file if needed
 
 const SkeletonEducationCard = () => {
