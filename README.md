@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, React, and Tailwind CSS. This project showcases my professional work, skills, and experience in an elegant and interactive way.
 
-First, run the development server:
+## 🚀 Features
 
+- **Modern UI/UX**: Built with a focus on user experience and modern design principles
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Performance Optimized**: Built with Next.js for optimal performance and SEO
+- **Interactive Elements**: Smooth animations and transitions using Framer Motion
+- **Analytics**: Integrated with Vercel Analytics for performance monitoring
+- **TypeScript**: Type-safe development with TypeScript
+- **SASS Support**: Advanced styling capabilities with SASS
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS 4, SASS
+- **Animation**: Framer Motion
+- **Icons**: Lucide React, React Icons
+- **Analytics**: Vercel Analytics
+- **Development Tools**: ESLint, PostCSS
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [your-repository-url]
+cd portfolio-frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env` file in the root directory and add your environment variables:
+```
+NEXT_PUBLIC_API_URL=your_api_url
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Development
 
-## Learn More
+Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+The application will be available at `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To build the application for production:
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application can be deployed to Vercel or any other hosting platform that supports Next.js applications.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
